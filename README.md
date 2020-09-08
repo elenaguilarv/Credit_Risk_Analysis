@@ -7,6 +7,7 @@ Prior to creating predictions, the data was prepared, trained, and tested to cre
 ### Oversampling using Random and SMOTE
 #### Balanced Accuracy Scores 
 Random: 0.716 
+
 SMOTE: 0.700
 
 ### Confusion Matrices
