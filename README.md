@@ -10,7 +10,7 @@ Random: 0.716
 
 SMOTE: 0.700
 
-### Confusion Matrices
+#### Confusion Matrices
 Random
 
 True Positive= 73 | False Positive= 28
@@ -23,7 +23,7 @@ True Positive= 71 | False Positive= 30
 
 False Negative= 5,178 | True Negative= 11,296
 
-### Describing Precision and Recall Scores
+#### Describing Precision and Recall Scores
 Rejects too many applications, risk is low 0.01, recall- is high 0.72, 0.71- GOOD
 
 SMOTE: WORSE, 0.01, 0.70 Okay
@@ -32,34 +32,34 @@ SMOTE: WORSE, 0.01, 0.70 Okay
 #### Balanced Accuracy Score
 Cluster Centroids: 0.643
 
-### Confusion Matrix
+#### Confusion Matrix
 True Positive= 82 | False Positive= 19
 
 False Negative= 8,983 | True Negative= 8,121
 
-### Describing Precision and Recall Scores
+#### Describing Precision and Recall Scores
 risk is low, 0.01 for high_risk as well, 0.81 for recall high, 0.47 recall low - not good
 
 ### Combination (Over and Under) Sampling using SMOTEENN 
 #### Balanced Accuracy Scores 
 SMOTEENN: 0.697
 
-### Confusion Matrix
+#### Confusion Matrix
 True Positive= 72 | False Positive= 29
 
 False Negative= 5,443 | True Negative= 11,661
 
-### Describing Precision and Recall Scores
+#### Describing Precision and Recall Scores
 Same 0.01 high precision, 0.71 recall high, 0.68 low OKAY?
 
 ## Extension
 ### Oversample using Ensemble Learners
-#### Balanced Accuracy Scores 
+##### Balanced Accuracy Scores 
 Balanced Random Forest Classifier: 0.786
 
 Easy Ensemble AdaBoost: 0.932
 
-### Confusion Matrices
+#### Confusion Matrices
 Balanced Random Forest Classifier
 
 True Positive= 68 | False Positive= 33
@@ -72,10 +72,10 @@ True Positive= 93 | False Positive= 8
 
 False Negative= 983 | True Negative= 16,121
 
-### Describing Precision and Recall Scores
+#### Describing Precision and Recall Scores
 RForest- 0.04, 1.00 high-low pre, 0.67, 0.90 recall high /low
 
 Ensemble: 0.09, 1.00, 0.92/0.94 recall high and low respect.
 
 ## Recommendations
-Includes a final recommendation on the model to use, if any. Provide justification
+Best fit and predictor - Easy Ensemble AdaBoost Classifier. Provide justification
