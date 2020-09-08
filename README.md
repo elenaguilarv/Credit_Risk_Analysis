@@ -53,8 +53,29 @@ False Negative= 5,443 | True Negative= 11,661
 Same 0.01 high precision, 0.71 recall high, 0.68 low OKAY?
 
 ## Extension
-### Oversample using RandomOverSampler
+### Oversample using Ensemble Learners
+#### Balanced Accuracy Scores 
+Balanced Random Forest Classifier: 0.786
 
+Easy Ensemble AdaBoost: 0.932
+
+### Confusion Matrices
+Balanced Random Forest Classifier
+
+True Positive= 68 | False Positive= 33
+
+False Negative= 1,749 | True Negative= 15,355
+
+Easy Ensemble AdaBoost
+
+True Positive= 93 | False Positive= 8
+
+False Negative= 983 | True Negative= 16,121
+
+### Describing Precision and Recall Scores
+RForest- 0.04, 1.00 high-low pre, 0.67, 0.90 recall high /low
+
+Ensemble: 0.09, 1.00, 0.92/0.94 recall high and low respect.
 
 ## Recommendations
 Includes a final recommendation on the model to use, if any. Provide justification
