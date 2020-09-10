@@ -20,6 +20,7 @@ SMOTE: 0.647
 Random
 
 True Positive= 51 | False Positive= 36
+
 False Negative= 5,422 | True Negative= 11,696
 
 SMOTE
@@ -56,7 +57,7 @@ True Positive= 54 | False Positive= 33
 
 False Negative= 10,116 | True Negative= 7,002
 
-###Precision and Recall Scores
+### Precision and Recall Scores
 #### Description:
 
 Precision (high-risk): 0.01
