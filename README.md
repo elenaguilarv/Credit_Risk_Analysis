@@ -1,81 +1,123 @@
 # Credit Risk Analysis
+## Using Machine Learning Models
 This analysis utilizes several machine learning models and techniques to predict credit risk for a firm that wants to improve the way they manage loan applications and assess good candidates for loans. The dataset used for this analysis is a csv file from LendingClub, a lending services company, which provides detailed information on the type of loans and applicants.
 
-Prior to creating predictions, the data was prepared, trained, and tested to create subsets and address class imbalances present in the target column, "loan_status" using sckikit-learn and  The performance of each machine learning model was then evaluated through several statistical reasoning processes from imbalanced-learn and scikit-learn library, including classification reports, confusion matrices, and accuracy scores.
+Prior to creating predictions, the data was prepared and split by the target variable "loan_status" and the other columns also known as features that help predict the target values. Identifying credit risk is an unbalanced classification problem. The ratio of good loans outweighs the risky loans, therefore a variety of sampling techniques were used to get a representative sample for training and evaluation. The performance of each machine learning model was evaluated through library tools that produce classification reports, confusion matrices, and accuracy scores. 
+
+# Resources
+Python, Jupyter Notebook, numpy, pandas, scikit-learn, imblearn
+
+File: LoanStats2019Q1.csv
 
 # Techniques
 ## Oversampling using Random and SMOTE
 ### Balanced Accuracy Scores 
-Random: 0.716 
+Random: 0.635
 
-SMOTE: 0.700
+SMOTE: 0.647
 
 ### Confusion Matrices
 Random
 
-True Positive= 73 | False Positive= 28
-
-False Negative= 4,960 | True Negative= 12,144
+True Positive= 51 | False Positive= 36
+False Negative= 5,422 | True Negative= 11,696
 
 SMOTE
 
-True Positive= 71 | False Positive= 30
+True Positive= 58 | False Positive= 29
 
-False Negative= 5,178 | True Negative= 11,296
+False Negative= 6,369 | True Negative= 10.749
 
-### Describing Precision and Recall Scores
-Rejects too many applications, risk is low 0.01, recall- is high 0.72, 0.71- GOOD
+### Precision and Recall Scores
+#### Description:
+Random                 
 
-SMOTE: WORSE, 0.01, 0.70 Okay
+Precision (high-risk): 0.01
+Precision (low-risk): 1.00
+
+Recall (high-risk): 0.68
+Recall (low-risk): 0.59
+
+SMOTE
+
+Precision (high-risk): 0.01
+Precision (low-risk): 1.00
+
+Recall (high-risk): 0.67
+Recall (low-risk): 0.63
+
 
 ## Undersampling using Cluster Centroids
 ### Balanced Accuracy Score
-Cluster Centroids: 0.643
+Cluster Centroids: 0.515
 
 ### Confusion Matrix
-True Positive= 82 | False Positive= 19
+True Positive= 54 | False Positive= 33
 
-False Negative= 8,983 | True Negative= 8,121
+False Negative= 10,116 | True Negative= 7,002
 
-### Describing Precision and Recall Scores
-risk is low, 0.01 for high_risk as well, 0.81 for recall high, 0.47 recall low - not good
+###Precision and Recall Scores
+#### Description:
+
+Precision (high-risk): 0.01
+Precision (low-risk): 1.00
+
+Recall (high-risk): 0.62
+Recall (low-risk): 0.41
 
 ## Combination (Over and Under) Sampling using SMOTEENN 
 ### Balanced Accuracy Scores 
-SMOTEENN: 0.697
+SMOTEENN: 0.620
 
 ### Confusion Matrix
-True Positive= 72 | False Positive= 29
+True Positive= 58 | False Positive= 29
 
-False Negative= 5,443 | True Negative= 11,661
+False Negative= 7,301 | True Negative= 9,817
 
-### Describing Precision and Recall Scores
-Same 0.01 high precision, 0.71 recall high, 0.68 low OKAY?
+### Precision and Recall Scores
+#### Description:
+Precision (high-risk): 0.01
+Precision (low-risk): 1.00
+
+Recall (high-risk): 0.67
+Recall (low-risk): 0.57
 
 # Extension
-## Oversample using Ensemble Learners
+## Oversampling using Ensemble Learners
 #### Balanced Accuracy Scores 
-Balanced Random Forest Classifier: 0.786
+Balanced Random Forest Classifier: 0.788
 
-Easy Ensemble AdaBoost: 0.932
+Easy Ensemble AdaBoost: 0.925
 
 ### Confusion Matrices
 Balanced Random Forest Classifier
 
-True Positive= 68 | False Positive= 33
+True Positive= 58 | False Positive= 29
 
-False Negative= 1,749 | True Negative= 15,355
+False Negative= 1,560 | True Negative= 15,558
 
 Easy Ensemble AdaBoost
 
-True Positive= 93 | False Positive= 8
+True Positive= 79 | False Positive= 8
 
-False Negative= 983 | True Negative= 16,121
+False Negative= 979 | True Negative= 16,139
 
 ### Describing Precision and Recall Scores
-RForest- 0.04, 1.00 high-low pre, 0.67, 0.90 recall high /low
+Balanced Random Forest Classifier
 
-Ensemble: 0.09, 1.00, 0.92/0.94 recall high and low respect.
+Precision (high-risk): 0.04
+Precision (low-risk): 1.00
+
+Recall (high-risk): 0.67
+Recall (low-risk): 0.91
+
+Easy Ensemble AdaBoost
+
+Precision (high-risk): 0.07
+Precision (low-risk): 1.00
+
+Recall (high-risk): 0.91
+Recall (low-risk): 0.94
 
 # Recommendations
-Best fit and predictor - Easy Ensemble AdaBoost Classifier. Provide justification
+The best performing model and predictor for this analysis turned out to be the Easy Ensemble AdaBoost Classifier. Though it stands out from the other models, it does display higher potential for false positives (FP) in some cases due to its high recall value (0.91) and low precision value (0.07). This means low-risk loans could potentially be rejected because they get labeled high-risk. This kind of miscalculation in a model could be turn out to be inefficient and even costly for the firm in the long run. A better solution would be to use the model as a first step but not rely on it fully until it is further improved.
