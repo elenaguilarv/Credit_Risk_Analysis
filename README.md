@@ -27,10 +27,9 @@ SMOTE
 
 True Positive= 58 | False Positive= 29
 
-False Negative= 6,369 | True Negative= 10.749
+False Negative= 6,369 | True Negative= 10,749
 
 ### Precision and Recall Scores
-#### Description:
 Random                 
 
 Precision (high-risk): 0.01
@@ -47,7 +46,6 @@ Precision (low-risk): 1.00
 Recall (high-risk): 0.67
 Recall (low-risk): 0.63
 
-
 ## Undersampling using Cluster Centroids
 ### Balanced Accuracy Score
 Cluster Centroids: 0.515
@@ -58,8 +56,6 @@ True Positive= 54 | False Positive= 33
 False Negative= 10,116 | True Negative= 7,002
 
 ### Precision and Recall Scores
-#### Description:
-
 Precision (high-risk): 0.01
 Precision (low-risk): 1.00
 
@@ -76,12 +72,17 @@ True Positive= 58 | False Positive= 29
 False Negative= 7,301 | True Negative= 9,817
 
 ### Precision and Recall Scores
-#### Description:
 Precision (high-risk): 0.01
 Precision (low-risk): 1.00
 
 Recall (high-risk): 0.67
 Recall (low-risk): 0.57
+
+#### Summary of Scores:
+(Random, SMOTE, Cluster Centroids, SMoTEENN)
+All models fit a perfect precision score for low-risk detections and had decent F1 scores, between 0.73-0.81 (except for Cluster Centroids, poor at 0.58) meaning the models are generally okay at producing fewer false positives or false negatives.
+
+However, the objective is to flag high-risk loans and the recall values are fairly poor for both models, between 0.41-0.68) for both high-risk and low-risk detections. This indicates a higher count of false negatives. All models also obtained a very low precision output (0.1) for high-risk loans and low F1 scores (0.1-0.2) for high-risk loans, which can allow for more inaccurate predictions. The balanced accuracy scores were also particularly low.
 
 # Extension
 ## Oversampling using Ensemble Learners
@@ -104,7 +105,7 @@ True Positive= 79 | False Positive= 8
 False Negative= 979 | True Negative= 16,139
 
 ### Describing Precision and Recall Scores
-Balanced Random Forest Classifier
+Balanced Random Forest Classifier (BRFC)
 
 Precision (high-risk): 0.04
 Precision (low-risk): 1.00
@@ -120,5 +121,11 @@ Precision (low-risk): 1.00
 Recall (high-risk): 0.91
 Recall (low-risk): 0.94
 
+#### Summary of Scores:
+(Balanced Random Forest Classifier, Easy Ensemble AdaBoost)
+Both models fit a perfect precision score for low-risk detections and great F1 scores, between 0.95 and 0.97, respectively, meaning the models are generally good at producing fewer false positives or false negatives.
+
+The objective is to flag high-risk loans and the recall values for both models, high-risk and low-risk detections, were high as well, 0.91-0.94 (except for BRFC's high-risk detections at 0.67). This represents a significant drop in false negatives compared  to the models reviewed earlier. They also obtained a higher precision outputs for high-risk loans, 0.04 and 0.07, and F1 scores of 0.07 and 0.14 for high-risk loans, which allows for more accurate predictive reading.
+
 # Recommendations
-The best performing model and predictor for this analysis turned out to be the Easy Ensemble AdaBoost Classifier. Though it stands out from the other models, it does display higher potential for false positives (FP) in some cases due to its high recall value (0.91) and low precision value (0.07). This means low-risk loans could potentially be rejected because they get labeled high-risk. This kind of miscalculation in a model could be turn out to be inefficient and even costly for the firm in the long run. A better solution would be to use the model as a first step but not rely on it fully until it is further improved.
+The best performing model and predictor for this analysis turned out to be the Easy Ensemble AdaBoost Classifier due to its highest accuracy score, 0.925, highest F1 score for high-risk loans, 0.14, and for low-risk loans, 0.97. Though it stands out from the other models, it does display potential for false positives (FP) in some cases due to its high recall value (0.91) and low precision value (0.07). This means low-risk loans could potentially be rejected because they get labeled high-risk. This kind of miscalculation in a model could be turn out to be inefficient and even costly for the firm in the long run. A better solution would be to use the model as a first step but not rely on it fully until it is further improved.
