@@ -1,5 +1,5 @@
 # Credit Risk Analysis
-## Using Machine Learning Models
+## With Machine Learning Models
 This analysis utilizes several machine learning models and techniques to predict credit risk for a firm that wants to improve the way they manage loan applications and assess good candidates for loans. The dataset used for this analysis is a csv file from LendingClub, a lending services company, which provides detailed information on the type of loans and applicants.
 
 Prior to creating predictions, the data was prepared and split by the target variable "loan_status" and the other columns also known as features that help predict the target values. Identifying credit risk is an unbalanced classification problem. The ratio of good loans outweighs the risky loans, therefore a variety of sampling techniques were used to get a representative sample for training and evaluation. The performance of each machine learning model was evaluated through library tools that produce classification reports, confusion matrices, and accuracy scores. 
